@@ -17,20 +17,20 @@
 #define NAV_L 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-// &lt { quick_tap_ms = <200>; };
+&lt { quick_tap_ms = <200>; };
 
 / {
 
-    // behaviors {
-    //     hm: homerow_mods {
-    //         compatible = "zmk,behavior-hold-tap";
-    //         label = "homerow mods";
-    //         #binding-cells = <2>;
-    //         tapping_term_ms = <200>;
-    //         flavor = "tap-preferred";
-    //         bindings = <&kp>, <&kp>;
-    //     };
-    // };
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homerow mods";
+            #binding-cells = <2>;
+            tapping_term_ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -38,12 +38,13 @@
         default_layer {
             label = "COLEMK";
             bindings = <
-                &none  &kp Q       &kp W        &kp F       &kp P        &kp G        &kp J    &kp L        &hm ES_UMLAUT U    &kp Y             &hm ES_N_TILDE ES_ACUTE  &none
+                &none  &kp Q       &kp W        &kp F       &kp P        &kp G        &kp J    &kp L        &hm A U            &kp Y             &hm A A                  &none
                 &none  &hm LGUI A  &hm LCTRL R  &hm LALT S  &hm LSHFT T  &kp D        &kp H    &hm LSHFT N  &hm LALT E         &hm LCTRL I       &hm LGUI O               &none
                 &none  &kp Z       &kp X        &kp C       &kp V        &kp B        &kp K    &kp M        &hm ES_SEMI COMMA  &hm ES_COLON DOT  &hm ES_UNDER ES_MINUS    &none
                                         &none  &lt SYM_L BKSP  &lt NUM_L SPACE        &lt MED_L RET  &lt NAV_L DEL  &none
             >;
         };
+        // &none  &kp Q       &kp W        &kp F       &kp P        &kp G        &kp J    &kp L        &hm ES_UMLAUT U    &kp Y             &hm ES_N_TILDE ES_ACUTE  &none
 
         sym_layer {
             label = "SYMBOL";
